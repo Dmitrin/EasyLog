@@ -39,20 +39,15 @@ public class EasyMdcAnnotationHandlerBeanPostProcessor implements BeanPostProces
                 @Override
                 public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
 
-                    System.out.println("String without MDC");
-
-                    MDC.put("it works", "yea!");
-
                     System.out.println("===> Started!");
 
+                    MDC.put("it works", "yea!");
                     long before = System.nanoTime();
 
                     Object result = method.invoke(bean, args);
 
                     long after = System.nanoTime();
-
-                    System.out.println("after-before: " + String.valueOf(after-before));
-
+                    System.out.println("Method work time: " + String.valueOf(after-before));
                     MDC.remove("it works");
 
                     System.out.println("<=== Finished!");
