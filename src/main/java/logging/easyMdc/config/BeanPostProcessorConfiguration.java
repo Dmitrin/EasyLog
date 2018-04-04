@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
 public class BeanPostProcessorConfiguration {
 
     @Bean
-    public LogSomething logSomething() throws InterruptedException {
+    public LogSomething logSomething() {
         return new LogSomething();
     }
 

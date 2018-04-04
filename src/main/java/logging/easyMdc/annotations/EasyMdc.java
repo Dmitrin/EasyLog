@@ -1,4 +1,4 @@
-package logging.easyMdc.services;
+package logging.easyMdc.annotations;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

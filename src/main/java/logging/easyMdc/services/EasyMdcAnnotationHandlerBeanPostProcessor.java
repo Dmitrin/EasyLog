@@ -1,5 +1,6 @@
 package logging.easyMdc.services;
 
+import logging.easyMdc.annotations.EasyMdc;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
 import org.springframework.beans.BeansException;
