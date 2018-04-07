@@ -1,4 +1,4 @@
-package logging.easyMdc.services;
+package logging.easyMdc.config;
 
 import logging.easyMdc.annotations.EasyMdc;
 import lombok.extern.slf4j.Slf4j;

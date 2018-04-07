@@ -1,25 +1,32 @@
 package logging.easyMdc.config;
 
-import logging.easyMdc.services.DoSomething;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.MDC;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = {BeanPostProcessorConfiguration.class})
-public class BeanPostProcessorConfigurationTest {
+@ContextConfiguration(classes = {
+        EasyMDCConfiguration.class,
+        EasyMDCConfigurationTest.TestConfiguration.class
+})
+public class EasyMDCConfigurationTest {
 
     @Autowired
     private ApplicationContext applicationContext;
 
-
-    @Test
-    public void logSomething() {
+    @Configuration
+    static class TestConfiguration{
+        @Bean
+        public DoSomething doSomething(){
+            return new LogSomething();
+        }
     }
 
     @Test

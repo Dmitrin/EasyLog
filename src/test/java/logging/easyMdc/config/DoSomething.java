@@ -1,4 +1,4 @@
-package logging.easyMdc.services;
+package logging.easyMdc.config;
 
 public interface DoSomething {
 
