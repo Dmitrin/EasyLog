@@ -1,5 +1,6 @@
 package logging.easyMdc.config;
 
+import logging.easyMdc.annotations.EnableEasyMDC;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,17 +13,15 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(classes = {
-        EasyMDCConfiguration.class,
-        EasyMDCConfigurationTest.TestConfiguration.class
-})
+@ContextConfiguration(classes = {EasyMDCConfigurationTest.TestConfig.class})
 public class EasyMDCConfigurationTest {
 
     @Autowired
     private ApplicationContext applicationContext;
 
     @Configuration
-    static class TestConfiguration{
+    @EnableEasyMDC
+    static class TestConfig{
         @Bean
         public DoSomething doSomething(){
             return new LogSomething();

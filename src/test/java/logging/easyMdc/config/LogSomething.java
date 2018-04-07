@@ -3,13 +3,11 @@ package logging.easyMdc.config;
 import logging.easyMdc.annotations.EasyMdc;
 import lombok.extern.slf4j.Slf4j;
 import org.slf4j.MDC;
-import org.springframework.stereotype.Service;
 
 @Slf4j
-@EasyMdc
-@Service
 public class LogSomething implements DoSomething {
 
+    @EasyMdc
     public void doSomething() {
         log.debug("1");
 
