@@ -1,6 +1,6 @@
 package logging.easyMdc.annotations;
 
-import logging.easyMdc.config.EasyMDCConfiguration;
+import logging.easyMdc.EasyMDCConfiguration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 

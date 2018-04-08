@@ -1,2 +1,2 @@
 # EasyLog
-Easy logging with using MDC and reflection
+Easy logging with using MDC and aspects
